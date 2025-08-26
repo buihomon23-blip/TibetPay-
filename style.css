@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;600;800&display=swap');
+
+:root{
+  --bg:#120a22;
+  --panel:#1b1133;
+  --panel-2:#221743;
+  --brand:#7c4dff;     /* ม่วงหลัก */
+  --brand-2:#9b6dff;
+  --gold:#f2c14e;      /* ทอง */
+  --text:#f6f2ff;
+  --muted:#c9c3e5;
+  --danger:#ff5876;
+  --ok:#19d28f;
+}
+
+*{box-sizing:border-box}
+html,body{
+  margin:0;
+  padding:0;
+  background: radial-gradient(1200px 600px at 60% -20%, #24184d 0%, var(--bg) 60%);
+  color:var(--text);
+  font-family:'Noto Sans Thai', system-ui, sans-serif;
+}
+
+/* Header */
+.site-header{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:16px;
+  padding:28px 16px 10px 16px;
+}
+.logo{
+  height:72px;
+  width:auto;
+  filter: drop-shadow(0 8px 22px rgba(0,0,0,.35));
+}
+.brand h1{
+  margin:0;
+  font-weight:800;
+  letter-spacing:.5px;
+  font-size:clamp(22px, 3.6vw, 40px);
+  background: linear-gradient(180deg, var(--gold), #ffd66e);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+.tagline{
+  margin:.2rem 0 0 0;
+  color:var(--muted);
+}
+
+/* ปุ่ม */
+.btn{
+  appearance:none;
+  border:none;
+  outline:none;
+  padding:10px 16px;
+  border-radius:12px;
+  background:var(--panel-2);
+  color:var(--text);
+  cursor:pointer;
+  transition:.2s ease;
+  font-weight:600;
+}
+.btn:hover{ transform:translateY(-1px); }
+.btn:active{ transform:translateY(0); opacity:.9;}
+.btn-pill{ border-radius:999px; }
+.btn-primary{
+  background: linear-gradient(180deg, var(--brand-2), var(--brand));
+  box-shadow:0 10px 30px rgba(124,77,255,.35);
+}
+.btn-lg{ font-size:1.05rem; padding:14px 20px; }
+.btn-ghost{ background:transparent; border:1px solid #3a2b66; }
+.btn-pay{ background:linear-gradient(180deg,#6e3fff,#522ae3); }
+
+/* โหมด/ปุ่มบน */
+.card-modes{
+  display:flex; flex-direction:column; align-items:center; gap:14px;
+  padding:6px 16px 10px 16px;
+}
+.mode-buttons{ display:flex; gap:10px; }
+.btn-pill.active{ outline:2px solid #4c37a1; background:#251b4a; }
+.hint{ color:var(--muted); font-size:.9rem; margin:0; }
+
+/* เวทีแสดงไพ่ */
+.stage{
+  width:min(1100px, 96%);
+  margin:14px auto 26px auto;
+  background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.02));
+  border:1px solid #2d2057;
+  border-radius:22px;
+  padding:20px;
+  box-shadow:0 20px 60px rgba(0,0,0,.3);
+}
+.cards{
+  min-height:140px;
+  display:flex; flex-wrap:wrap; gap:12px; justify-content:center;
+}
+.card{
+  width:130px; height:180px;
+  background:#2a1f53;
+  border:1px solid #3a2b66;
+  border-radius:14px;
+  display:flex; align-items:center; justify-content:center;
+  padding:10px;
+  box-shadow:0 10px 22px rgba(0,0,0,.25);
+}
+.card h4{ margin:0; font-size:16px; }
+.card .meaning{ color:var(--muted); font-size:.9rem; margin-top:6px; }
+
+.message{
+  text-align:center; margin-top:10px; color:var(--muted);
+}
+
+/* ส่วนขาย/อัปเกรด */
+.paywall{
+  width:min(1100px, 96%);
+  margin:0 auto 24px auto;
+  display:grid; gap:14px;
+}
+.paywall h2{
+  margin:0 0 4px 0; font-size:1.4rem;
+}
+.paywall .sub{ margin:0 0 8px 0; color:var(--muted); }
+
+.plan{
+  background:linear-gradient(180deg, #1c1236, #160e2c);
+  border:1px solid #2e2256;
+  border-radius:18px;
+  padding:14px;
+}
+.plan-head{ display:flex; align-items:center; justify-content:space-between; gap:10px; }
+.plan h3{ margin:0; }
+.badge{
+  display:inline-block; padding:6px 10px; border-radius:999px;
+  background:#2c1f54; border:1px solid #3a2b66; color:#d9d3ff; font-size:.85rem;
+}
+.pay-row{ display:flex; gap:10px; margin-top:10px; flex-wrap:wrap; }
+.meta{ color:var(--muted); margin:.4rem 0 0 0; }
+.perks{ margin:.5rem 0 0 20px; color:var(--muted); }
+
+/* ฟุตเตอร์ */
+.site-footer{
+  text-align:center; color:#a99fe0; padding:18px 10px 40px 10px;
+}
+
+/* responsive */
+@media (max-width:560px){
+  .card{ width:110px; height:156px; }
+}
