@@ -1,2 +1,2 @@
-# TibetPay-
+# TibetPayakorn
 คำทำนายไพ่ทิเบต
