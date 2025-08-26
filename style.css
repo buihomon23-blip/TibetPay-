@@ -1,0 +1,41 @@
+body {
+  font-family: "Prompt", sans-serif;
+  background: linear-gradient(to bottom, #2e004f, #0f001f);
+  color: #fff;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  padding: 20px;
+}
+
+h1 {
+  color: gold;
+  margin-bottom: 10px;
+}
+
+button {
+  background: #7a3cff;
+  border: none;
+  padding: 10px 20px;
+  color: #fff;
+  margin: 5px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background: #a05cff;
+}
+
+.plan {
+  background: rgba(255,255,255,0.1);
+  margin: 10px auto;
+  padding: 15px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 300px;
+}
