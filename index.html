@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ทิเบตพยากรณ์ • ไพ่ทำนายแนวทิเบต</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="container header">
+    <img src="logo.png" alt="โลโก้ทิเบตพยากรณ์" class="logo" />
+    <div class="title-wrap">
+      <h1>ทิเบตพยากรณ์</h1>
+      <p class="subtitle">TIBETPAYAKORN · ไพ่ทำนายแนวทิเบต</p>
+    </div>
+  </header>
+
+  <!-- Disclaimer (บน) -->
+  <div class="container disclaimer top">
+    🪄 ใช้เพื่อความบันเทิงและความเชื่อส่วนบุคคล ผลการทำนายไม่ใช่คำแนะนำทางการเงิน/การแพทย์/กฎหมาย
+  </div>
+
+  <!-- กล่องดูไพ่ฟรี -->
+  <main class="container card-box">
+    <h2>ดูไพ่ฟรี</h2>
+    <p class="muted">กดปุ่มด้านล่างเพื่อสุ่มคำทำนาย 1 ใบ/ครั้ง</p>
+
+    <button id="btnDrawFree" class="btn btn-primary">สุ่มไพ่ฟรี</button>
+
+    <div id="result" class="result" hidden>
+      <div class="card-face">
+        <div id="cardTitle" class="card-title"></div>
+        <div id="cardText" class="card-text"></div>
+      </div>
+
+      <!-- CTA ไปยังเมนูชำระเงิน: โชว์หลังสุ่มไพ่แล้วเท่านั้น -->
+      <button id="btnUpgrade" class="btn btn-outline" hidden>
+        ดูแบบเต็มรูปแบบ (ปลดล็อกเพิ่มเติม)
+      </button>
+    </div>
+  </main>
+
+  <!-- Disclaimer (ล่าง) -->
+  <footer class="container footer">
+    <p class="disclaimer">
+      ข้อจำกัดความรับผิด (Disclaimer): บริการนี้จัดทำเพื่อความบันเทิงและความเชื่อส่วนบุคคลเท่านั้น
+      ผู้ใช้ควรใช้วิจารณญาณในการตัดสินใจ และรับผิดชอบการกระทำของตนเอง
+    </p>
+    <p class="copyright">© ทิเบตพยากรณ์</p>
+  </footer>
+
+  <!-- Modal: ชำระเงิน -->
+  <div id="paywall" class="modal" aria-hidden="true">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="paywallTitle">
+      <button class="modal-close" title="ปิด" data-close>&times;</button>
+
+      <h3 id="paywallTitle">ปลดล็อกแบบเต็มรูปแบบ</h3>
+      <p class="muted">เลือกแพ็กเกจที่เหมาะกับคุณ แล้วชำระผ่านบัญชีธนาคารหรือพร้อมเพย์</p>
+
+      <div class="tiers">
+        <button class="tier" data-amt="29">29 บาท</button>
+        <button class="tier" data-amt="49">49 บาท</button>
+        <button class="tier" data-amt="199">199 บาท</button>
+        <button class="tier" data-amt="1999">1,999 บาท (รายปี)</button>
+      </div>
+
+      <div class="pay-info">
+        <h4>โอนผ่านบัญชีธนาคาร</h4>
+        <div class="row">
+          <div>
+            <div class="label">ธนาคาร</div>
+            <div class="value">กสิกรไทย</div>
+          </div>
+          <div>
+            <div class="label">เลขบัญชี</div>
+            <div class="value mono" id="bankNumber">744-239-1763</div>
+          </div>
+          <div>
+            <div class="label">ชื่อบัญชี</div>
+            <div class="value">จารุวรรณ หอมอ่อน</div>
+          </div>
+        </div>
+        <button class="btn btn-copy" data-copy="#bankNumber">คัดลอกเลขบัญชี</button>
+
+        <h4 class="mt">พร้อมเพย์</h4>
+        <div class="row">
+          <div>
+            <div class="label">เบอร์พร้อมเพย์</div>
+            <div class="value mono" id="ppNumber">063-265-6366</div>
+          </div>
+        </div>
+        <button class="btn btn-copy" data-copy="#ppNumber">คัดลอกเบอร์พร้อมเพย์</button>
+
+        <div class="actions">
+          <a class="btn btn-secondary" id="openLine" target="_blank" rel="noopener"
+             href="https://lin.ee/k6CEOkR">เปิดแชท LINE เพื่อส่งสลิป</a>
+        </div>
+
+        <p class="note">
+          * หลังโอนแล้ว โปรดส่งสลิปไปที่ LINE เพื่อปลดล็อกสิทธิ์โดยแอดมิน
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
